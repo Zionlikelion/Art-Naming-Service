@@ -2,8 +2,8 @@
 pragma solidity ^0.8.10;
 
 // We first import some OpenZeppelin Contracts.
-import "node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "node_modules/@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
 
 import {StringUtils} from "./libraries/StringUtils.sol";
 // We import another help function
@@ -77,11 +77,7 @@ contract Domains is ERC721URIStorage {
 
     _tokenIds.increment();
   }
-	
-	// We still need the price, getAddress, setRecord and getRecord functions, they just don't change
-}
-  
-  
+	  
   function getAddress(string calldata name) public view returns (address) {
       // Check that the owner is the transaction sender
       return domains[name];
@@ -109,3 +105,4 @@ contract Domains is ERC721URIStorage {
       return 1 * 10**17;
     }
   }
+}
